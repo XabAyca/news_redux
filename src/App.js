@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Provider } from 'react-redux';
+import News from './News';
+import { store } from './redux/store';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className='app'>
+        <h1>CONFINEWS</h1>
+        <p>En ces temps de confinement, il est bon de pouvoir s'informer efficacement sur un ensemble de sources disponibles gratuitement. Grâce à Confinews, vous pourrez choisir la source que vous préférez afin d'avoir les dernières informations fiables et vérifiées.</p>
+        <News/>
+      </div>
+    </Provider>
   );
-}
+};
 
 export default App;
